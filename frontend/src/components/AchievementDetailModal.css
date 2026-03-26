@@ -1,0 +1,326 @@
+/* ===================================
+   ACHIEVEMENT DETAIL MODAL - UNIQUE CLASSES 
+   FORCED FULL-WIDTH STRETCH LAYOUT
+   =================================== */
+
+.achieve-modal-backdrop {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    z-index: 10000 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+
+.achieve-modal-container {
+    position: relative !important;
+    width: 95% !important;
+    max-width: 800px !important;
+    height: 90vh !important;
+    background: #ffffff !important;
+    border-radius: 32px !important;
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.5) !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    animation: achieveModalPopIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+/* Larger modal for more spacious view */
+.achieve-modal-container-large {
+    max-width: 1100px !important;
+    width: 98% !important;
+    height: 95vh !important;
+}
+
+@keyframes achieveModalPopIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Close Button */
+.achieve-modal-close-btn {
+    position: absolute !important;
+    top: 25px !important;
+    right: 25px !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    background: #f8fafc !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 10010 !important;
+    transition: all 0.2s !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.achieve-modal-close-btn:hover {
+    transform: rotate(90deg) scale(1.1) !important;
+    background: #ffffff !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Content Layout (Aggressive Stretch) */
+.achieve-modal-content {
+    flex: 1 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    overflow: hidden !important;
+}
+
+.achieve-modal-details-scroll {
+    flex: 1 !important;
+    width: 100% !important;
+    padding: 60px !important;
+    overflow-y: auto !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
+
+.achieve-modal-content-wrapper {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    display: block !important;
+}
+
+/* Header & Title */
+.achieve-details-header {
+    margin-bottom: 12px !important;
+}
+
+.achieve-category-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 10px 20px !important;
+    border-radius: 50px !important;
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.achieve-modal-title {
+    font-size: 48px !important;
+    font-weight: 900 !important;
+    color: #0f172a !important;
+    line-height: 1.2 !important;
+    margin: 0 0 20px 0 !important;
+    padding-bottom: 15px !important;
+    border-bottom: 3px solid #f1f5f9 !important;
+    width: 100% !important;
+}
+
+/* Meta Grid - 4 Columns */
+.achieve-modal-meta-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+    margin-bottom: 50px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.achieve-meta-item {
+    display: flex !important;
+    gap: 15px !important;
+    padding: 20px !important;
+    background: #f8fafc !important;
+    border-radius: 20px !important;
+    border: 1px solid #e2e8f0 !important;
+    transition: transform 0.2s !important;
+}
+
+.achieve-meta-item:hover {
+    transform: translateY(-5px) !important;
+    background: #ffffff !important;
+}
+
+.achieve-meta-icon {
+    font-size: 26px !important;
+    flex-shrink: 0 !important;
+}
+
+.achieve-meta-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    overflow: hidden !important;
+}
+
+.achieve-meta-label {
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    color: #64748b !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+}
+
+.achieve-meta-value {
+    font-size: 15px !important;
+    color: #1e293b !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+}
+
+/* Sections */
+.achieve-description-section {
+    margin-bottom: 40px !important;
+    padding: 35px !important;
+    background: #f1f5f9 !important;
+    border-radius: 24px !important;
+    border-left: 6px solid #3b82f6 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.achieve-section-title {
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    color: #1e40af !important;
+    margin: 0 0 15px 0 !important;
+}
+
+.achieve-description-text {
+    font-size: 17px !important;
+    color: #334155 !important;
+    line-height: 1.7 !important;
+    margin: 0 !important;
+}
+
+/* More Details */
+.achieve-additional-details {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 25px !important;
+    width: 100% !important;
+}
+
+.achieve-detail-block {
+    padding: 30px !important;
+    background: #ffffff !important;
+    border-radius: 24px !important;
+    border: 1px solid #e2e8f0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.achieve-detail-title {
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin: 0 0 15px 0 !important;
+}
+
+.achieve-detail-text,
+.achieve-detail-list li {
+    font-size: 16px !important;
+    color: #475569 !important;
+    line-height: 1.6 !important;
+}
+
+.achieve-detail-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+}
+
+.achieve-detail-list li {
+    padding-left: 28px !important;
+    position: relative !important;
+}
+
+.achieve-detail-list li::before {
+    content: "→" !important;
+    position: absolute !important;
+    left: 0 !important;
+    color: #3b82f6 !important;
+    font-weight: bold !important;
+}
+
+/* Utilities */
+.achieve-students-full-width {
+    grid-column: 1 / -1 !important;
+}
+
+.achieve-students-list {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+}
+
+.achieve-student-name {
+    padding: 8px 18px !important;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 50px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+}
+
+.achieve-keywords-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+}
+
+.achieve-keyword-tag {
+    padding: 8px 18px !important;
+    background: #dbeafe !important;
+    color: #1e40af !important;
+    border-radius: 50px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .achieve-modal-meta-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .achieve-modal-details-scroll {
+        padding: 40px 20px !important;
+    }
+
+    .achieve-modal-title {
+        font-size: 32px !important;
+    }
+
+    .achieve-modal-meta-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .achieve-modal-container {
+        height: 95vh !important;
+        border-radius: 24px !important;
+    }
+}

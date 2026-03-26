@@ -1,0 +1,450 @@
+/* ===================================
+   ACHIEVEMENT CATEGORY PAGE - NEW DESIGN
+   =================================== */
+
+.achievement-category-page {
+    min-height: 100vh;
+    background: #fdfdfd;
+}
+
+/* Updated Category Hero */
+.category-hero {
+    position: relative;
+    padding: 30px 0 60px;
+    background: var(--hero-bg);
+    overflow: hidden;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.category-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--hero-img);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: saturate(0.5) brightness(0.8);
+    z-index: 1;
+}
+
+.hero-overlay-refined {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            rgba(0, 0, 0, 0.4) 0%,
+            transparent 70%);
+    z-index: 2;
+}
+
+.hero-content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-main-info {
+    flex: 1;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.breadcrumb-link {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.breadcrumb-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.breadcrumb-current {
+    color: white;
+    font-weight: 600;
+}
+
+.hero-title-group {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.hero-icon-container {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-icon-large {
+    font-size: 45px;
+    line-height: 1;
+}
+
+.hero-title-main {
+    font-size: 56px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: white;
+    letter-spacing: -0.02em;
+}
+
+.hero-tagline {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 550px;
+    line-height: 1.6;
+}
+
+/* Glassmorphism Stats Panel */
+.hero-stats-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 28px;
+    padding: 25px 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    animation: slideInRight 0.8s ease-out;
+    margin-top: -60px;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.stat-label-large {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-status-pill {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #10b981;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #10b981;
+}
+
+/* Wave Divider */
+.hero-wave-refined {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    line-height: 0;
+}
+
+.hero-wave-refined svg {
+    width: 100%;
+    height: 150px;
+}
+
+/* Grid Layout */
+.achievements-list-container {
+    max-width: 1400px;
+    margin: -100px auto 100px;
+    padding: 0 40px;
+    position: relative;
+    z-index: 20;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 30px;
+}
+
+/* Achievement Card Horizontal */
+.achievement-card-horizontal {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    gap: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: cardEntry 0.6s ease-out both;
+}
+
+@keyframes cardEntry {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.achievement-card-horizontal:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1), 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: #cbd5e1;
+    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+}
+
+.card-image-section {
+    flex: 0 0 100px;
+}
+
+.card-icon-wrapper {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #f0f4f8 0%, #e8f0f6 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 2px solid #dbeafe;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+.card-status-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-placeholder-icon {
+    font-size: 36px;
+}
+
+.card-content-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    /* Prevents overflow in flex */
+}
+
+.card-date {
+    font-size: 11px;
+    font-weight: 800;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 2px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1e293b;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #64748b;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.card-action {
+    margin-top: auto;
+}
+
+.read-more-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #3b82f6;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.read-more-btn:hover {
+    gap: 10px;
+    color: #1d4ed8;
+}
+
+/* Empty State */
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 100px 20px;
+    background: white;
+    border-radius: 32px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .hero-content-wrapper {
+        padding: 0 40px;
+    }
+
+    .hero-title-main {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-content-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .hero-stats-panel {
+        align-self: flex-start;
+        padding: 25px 40px;
+    }
+
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .category-hero {
+        padding: 60px 0 120px;
+    }
+
+    .hero-title-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .hero-title-main {
+        font-size: 36px;
+    }
+
+    .achievements-list-container {
+        margin-top: -60px;
+        padding: 0 20px;
+    }
+
+    .achievement-card-horizontal {
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .card-image-section {
+        flex: 0 0 80px;
+    }
+
+    .card-icon-wrapper {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hero-wave-refined svg {
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .achievement-card-horizontal {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-title-main {
+        font-size: 30px;
+    }
+
+    .hero-stats-panel {
+        width: 100%;
+    }
+}

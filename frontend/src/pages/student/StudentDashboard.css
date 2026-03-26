@@ -1,0 +1,233 @@
+.student-dashboard {
+  animation: fadeIn 0.18s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dashboard-header {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent-gold);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.header-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.dashboard-header h1 {
+  color: var(--text);
+  margin-bottom: 8px;
+  font-size: 22px;
+  letter-spacing: 0.2px;
+  font-weight: 700;
+}
+
+.dashboard-header p {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.status-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.status-label {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.header-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.chat-btn,
+.report-btn {
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.3s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.chat-btn:hover:not(:disabled),
+.report-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.report-btn {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.report-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: #ff4757;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  color: white;
+  margin-left: 4px;
+}
+
+.status-badge {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  white-space: nowrap;
+  display: inline-block;
+  margin-top: 4px;
+  line-height: 1.6;
+}
+
+.status-not-started {
+  background: rgba(71, 85, 105, 0.08);
+  border-color: rgba(71, 85, 105, 0.18);
+  color: #334155;
+}
+
+.status-in-progress {
+  background: rgba(217, 119, 6, 0.10);
+  border-color: rgba(217, 119, 6, 0.22);
+  color: #92400e;
+}
+
+.status-completed {
+  background: rgba(22, 163, 74, 0.10);
+  border-color: rgba(22, 163, 74, 0.22);
+  color: #166534;
+}
+
+.status-pending,
+.badge-pending {
+  background: rgba(217, 119, 6, 0.10) !important;
+  border-color: rgba(217, 119, 6, 0.22) !important;
+  color: #92400e !important;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.tab:hover {
+  background: var(--surface-2);
+  border-color: var(--accent-orange);
+}
+
+.tab.active {
+  background: var(--accent-maroon);
+  border-color: var(--accent-maroon);
+  color: var(--primary-contrast);
+}
+
+.tab-content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  min-height: 400px;
+}
+
+.loading {
+  text-align: center;
+  padding: 60px;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+}
+
+.empty-state-icon {
+  font-size: 56px;
+  margin-bottom: 14px;
+}
+
+.empty-state h3 {
+  color: var(--text);
+  margin-bottom: 6px;
+}
